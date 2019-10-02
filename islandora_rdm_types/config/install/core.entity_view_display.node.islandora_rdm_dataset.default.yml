@@ -5,12 +5,15 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_member_of
+    - field.field.node.islandora_rdm_dataset.field_model
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_rdm_description
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
+    - field.field.node.islandora_rdm_dataset.field_rdm_license
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -18,6 +21,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
     - field.field.node.islandora_rdm_dataset.field_rights
     - field.field.node.islandora_rdm_dataset.field_subjects
+    - field.field.node.islandora_rdm_dataset.field_tags
     - node.type.islandora_rdm_dataset
   module:
     - entity_reference_revisions
@@ -67,7 +71,7 @@ third_party_settings:
         - group_identification
         - group_more_info
       parent_name: ''
-      weight: 2
+      weight: 4
       format_type: tabs
       format_settings:
         id: group-dataset
@@ -78,7 +82,7 @@ third_party_settings:
     group_rdm_funding:
       children: {  }
       parent_name: ''
-      weight: 17
+      weight: 24
       format_type: tab
       format_settings:
         formatter: closed
@@ -88,7 +92,7 @@ third_party_settings:
       label: Funding
       region: hidden
 _core:
-  default_config_hash: 3sH8InunxgAK3r9WW34rQ1IBVCj0PvOpI6P8SIWnROk
+  default_config_hash: pWoBXQievSRL8Tlp9BEJNV-mbuqI3oPzfWDIeJNkExI
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -99,23 +103,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  display_media_entity_view_1:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_entity_view_2:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   display_media_service_file:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_thumbnail:
-    weight: 7
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -134,12 +123,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_islandora_rdm_identifier:
-    weight: 7
+    weight: 6
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_model:
+    weight: 25
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_rdm_contributors:
     type: entity_reference_revisions_entity_view
@@ -161,7 +158,7 @@ content:
     region: content
   field_rdm_description:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -169,7 +166,7 @@ content:
     third_party_settings: {  }
     region: content
   field_rdm_publication_year:
-    weight: 10
+    weight: 9
     label: inline
     settings:
       link_to_entity: false
@@ -186,7 +183,7 @@ content:
     third_party_settings: {  }
     region: content
   field_rdm_resource_type:
-    weight: 9
+    weight: 8
     label: above
     settings:
       link_to_entity: false
@@ -195,13 +192,13 @@ content:
     region: content
   field_rdm_resource_type_general:
     type: list_default
-    weight: 8
+    weight: 7
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
   field_rights:
-    weight: 12
+    weight: 11
     label: above
     settings:
       link_to_entity: false
@@ -209,7 +206,7 @@ content:
     type: string
     region: content
   field_subjects:
-    weight: 11
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -225,48 +222,37 @@ content:
       native_language: false
     third_party_settings: {  }
   links:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_1:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_2:
-    weight: 9
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   openseadragon_media_evas_service_file:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_1:
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_2:
-    weight: 12
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   pdfjs_media_evas_service_file:
-    weight: 13
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   body: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_thumbnail: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_member_of: true
   field_rdm_alternate_identifier: true
   field_rdm_funding_information: true
   field_rdm_geograhical_location: true
+  field_rdm_license: true
   field_rdm_related_identifier: true
-
+  field_tags: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
 

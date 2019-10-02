@@ -11,6 +11,8 @@ dependencies:
     - node.type.funding_information
   module:
     - link
+_core:
+  default_config_hash: _-07wGfsU6IjWfGkpP81HUStlqL7wqp3RfYcjUQJkeo
 id: node.funding_information.default
 targetEntityType: node
 bundle: funding_information
@@ -70,6 +72,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
@@ -110,3 +119,4 @@ content:
     third_party_settings: {  }
 hidden:
   path: true
+

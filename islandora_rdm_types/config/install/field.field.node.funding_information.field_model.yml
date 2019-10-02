@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_model
+    - node.type.funding_information
+    - taxonomy.vocabulary.islandora_models
+  content:
+    - 'taxonomy_term:islandora_models:84095949-2f48-4444-bdcd-0b26f8746120'
+id: node.funding_information.field_model
+field_name: field_model
+entity_type: node
+bundle: funding_information
+label: Model
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 84095949-2f48-4444-bdcd-0b26f8746120
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      islandora_models: islandora_models
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
+
